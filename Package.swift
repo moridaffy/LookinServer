@@ -30,8 +30,8 @@ let package = Package(
                 .headerSearchPath("**")
             ],
             cxxSettings: [
-                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug)),
-                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .debug))
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1"),
+                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1")
             ]
         ),
         .target(
@@ -39,12 +39,13 @@ let package = Package(
             dependencies: [.target(name: "LookinServerBase")],
             path: "Src/Swift",
             cxxSettings: [
-                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug)),
-                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .debug))
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1"),
+                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1")
             ],
             swiftSettings: [
-                .define("SHOULD_COMPILE_LOOKIN_SERVER", .when(configuration: .debug)),
-                .define("SPM_LOOKIN_SERVER_ENABLED", .when(configuration: .debug))
+                .define("SHOULD_COMPILE_LOOKIN_SERVER"),
+                .define("SPM_LOOKIN_SERVER_ENABLED"),
+
             ]
         ),
         .target(
@@ -53,7 +54,7 @@ let package = Package(
             path: "Src/Base",
             publicHeadersPath: "",
             cxxSettings: [
-                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug))
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1")
             ]
         )
     ]
